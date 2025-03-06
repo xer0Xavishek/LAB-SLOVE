@@ -1,0 +1,28 @@
+import java.util.Scanner;
+import java.io.*;
+
+public class Lab01Task01
+{
+ public static void main(String[] args)
+ {
+   int[][] adjacencyMatrix = null;
+   
+   try
+   {
+     Scanner sc = new Scanner(new File("input.txt"));
+     int vertex=0, edge=0, vertex1=0, vertex2=0;
+     0
+     while(sc.hasNextInt())
+     {
+       vertex = sc.nextInt();
+       edge = sc.nextInt();
+       
+      
+      //write remaining code here
+   }
+   catch(IOException e)
+   {
+     System.out.println(e);
+   }
+ }
+}
