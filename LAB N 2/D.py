@@ -5,8 +5,8 @@ def binaryString(s):
     while l <= r:
         mid = (l + r) // 2
         if s[mid] == '1':
-            result = mid + 1  # Use 1-based index
-            r = mid - 1
+            result = mid + 1  #           Use 1-based index
+            r = mid - 1 #             # res is 1 based index but mid is 0 based index
         else:
             l = mid + 1
 
