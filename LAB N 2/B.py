@@ -1,6 +1,6 @@
 def bfSum(a,A,b,B):
-    la,ra=0,a 
-    lb,rb=0,b
+    la,ra=0,a-1 
+    lb,rb=0,b-1
     res=[]*(a+b)
     while la<ra and lb<rb:
         if A[la]<B[lb]:
@@ -10,10 +10,10 @@ def bfSum(a,A,b,B):
             res.append(B[lb])
             lb+=1
 
-    while la<ra:
+    while la<=ra:
         res.append(A[la])
         la+=1
-    while lb<rb:
+    while lb<=rb:
         res.append(B[lb])
         lb+=1
 
