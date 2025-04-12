@@ -17,8 +17,6 @@ for i in range(M):
 
 oddTrackk = 0
 
-
-
 for i in range(1, N + 1):
 
     if deg[i] % 2 != 0:

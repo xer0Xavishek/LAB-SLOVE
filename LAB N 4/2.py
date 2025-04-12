@@ -18,11 +18,13 @@ for i in range(m):
 
     adj_list[src].append((dest, weight))
 
-for nd in range(1, n + 1):
+print("Adjacency List:", adj_list)
+print(adj_list[3])
+for k in range(1, n + 1):
 
-    edges = adj_list[nd]
+    edges = adj_list[k]
 
-    res = f"{nd}:"
+    res = f"{k}:"
 
     for d, w in edges:
         res += f" ({d},{w})"

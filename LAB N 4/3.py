@@ -22,7 +22,6 @@ for i in range(n):
 
 
 
-
-
 for row in adj_m:
     print(' '.join(map(str, row)) + ' ')
+
