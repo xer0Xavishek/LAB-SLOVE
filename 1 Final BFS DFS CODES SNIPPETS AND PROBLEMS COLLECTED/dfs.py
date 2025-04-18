@@ -1,15 +1,10 @@
 def dfs(graph):
-    color = {}
-    predecessor = {}
-    discovery = {}
-    finish = {}
-    traversal_order = []
-    time = {'value': 0}  # Use a dictionary to manage time as a shared mutable object
-
-    # Initialization
-    for u in graph:
-        color[u] = 'WHITE'
-        predecessor[u] = None
+    color = {'WHITE' for node in graph}  # WHITE = unvisited, GRAY = discovered, BLACK = finished
+    predecessor = {None for node in graph}  # Initialize predecessor for all nodes
+    discovery = {} # Discovery time for each node
+    finish = {} # Finish time for each node
+    traversal_order = [] # To keep track of the order of traversal
+    time = [0]  # Use a list to manage time as a mutable object
 
     # DFS
     for u in graph:
@@ -21,8 +16,8 @@ def dfs(graph):
 
 def dfs_visit(graph, u, color, predecessor, discovery, finish, time, traversal_order):
     color[u] = 'GRAY'
-    time['value'] += 1
-    discovery[u] = time['value']
+    time[0] += 1  # Increment time
+    discovery[u] = time[0]
 
     for v in graph[u]:
         if color[v] == 'WHITE':
@@ -30,9 +25,11 @@ def dfs_visit(graph, u, color, predecessor, discovery, finish, time, traversal_o
             dfs_visit(graph, v, color, predecessor, discovery, finish, time, traversal_order)
 
     color[u] = 'BLACK'
-    time['value'] += 1
-    finish[u] = time['value']
+    time[0] += 1  # Increment time
+    finish[u] = time[0]
     traversal_order.append(u)
+
+
 
 
 # Example graph
