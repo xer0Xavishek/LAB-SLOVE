@@ -2,7 +2,6 @@ N, M, S, D = map(int, input().split())
 
 adj = [[] for k in range(N + 1)]
 
-
 uL = list(map(int, input().split()))
 
 vL = list(map(int, input().split()))
@@ -78,6 +77,5 @@ else:
     path.reverse()
 
     print(len(path) - 1)
-
 
     print(' '.join(map(str, path)))
