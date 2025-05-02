@@ -1,21 +1,36 @@
-from datetime import datetime, timedelta
+# import numpy as np
+# import matplotlib.pyplot as plt
 
-# Start date and time
-start_date = datetime(2025, 3, 8, 8, 0, 0)
+# x = np.linspace(0, 4, 1000)
+# S1 = (32/np.pi) * np.sin(np.pi*x/2)
+# S3 = S1 + (32/(3*np.pi)) * np.sin(3*np.pi*x/2)
+# S5 = S3 + (32/(5*np.pi)) * np.sin(5*np.pi*x/2)
 
-# Given time
-hours, minutes, seconds = 155, 51, 50
+# plt.plot(x, S1, label='S1')
+# plt.plot(x, S3, label='S3')
+# plt.plot(x, S5, label='S5')
+# plt.legend()
+# plt.show()
 
-# Convert hours to days and remaining hours
-days = hours // 24
-remaining_hours = hours % 24
 
-# Create a timedelta object
-time_delta = timedelta(days=days, hours=remaining_hours, minutes=minutes, seconds=seconds)
+import matplotlib.pyplot as plt
+import numpy as np
 
-# Calculate the final date and time
-final_date = start_date + time_delta
+# Define the function
+def f(x):
+    x_mod = x % 4
+    return 8 if (x_mod < 2) else -8
 
-# Print the result in 12-hour format with AM/PM
-print("Start Date and Time:", start_date.strftime('%Y-%m-%d %I:%M:%S %p'))
-print("Final Date and Time:", final_date.strftime('%Y-%m-%d %I:%M:%S %p'))
+# Generate x values
+x = np.linspace(-4, 8, 1000)
+y = np.array([f(xi) for xi in x])
+
+# Plot
+plt.figure(figsize=(10, 4))
+plt.plot(x, y, 'b')
+plt.title('Graph of f(x)')
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.grid(True, linestyle='--')
+plt.ylim(-9, 9)
+plt.show()
